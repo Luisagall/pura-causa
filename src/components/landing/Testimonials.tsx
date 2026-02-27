@@ -70,10 +70,20 @@ const Testimonials = () => {
           className="text-center"
         >
           <p className="text-sm text-muted-foreground uppercase tracking-widest mb-8">Confían en nosotros</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-            {partners.map((p) => (
-              <span key={p} className="text-xl font-serif font-semibold text-primary/30">{p}</span>
-            ))}
+          <div className="overflow-hidden relative">
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-primary/[0.03] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-primary/[0.03] to-transparent z-10 pointer-events-none" />
+            <motion.div
+              className="flex gap-16 items-center w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 20, ease: "linear", repeat: Infinity }}
+            >
+              {[...partners, ...partners].map((p, i) => (
+                <span key={`${p}-${i}`} className="text-xl font-serif font-semibold text-primary/30 whitespace-nowrap">
+                  {p}
+                </span>
+              ))}
+            </motion.div>
           </div>
         </motion.div>
       </div>
