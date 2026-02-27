@@ -123,9 +123,11 @@ const VolunteerDashboard = () => {
                       <div className="flex items-center gap-2"><Users className="h-4 w-4" />{r.vacancies} cupos</div>
                       <div className="flex items-center gap-2 text-accent font-semibold"><DollarSign className="h-4 w-4" />{r.stipend}</div>
                     </div>
-                    <Button className="w-full mt-5 bg-accent text-accent-foreground hover:bg-accent/90 rounded-xl">
-                      Postularme
-                    </Button>
+                    <a href="https://forms.gle/rDjnXEm9J3iVFkEo8" target="_blank" rel="noopener noreferrer" className="w-full">
+                      <Button className="w-full mt-5 bg-accent text-accent-foreground hover:bg-accent/90 rounded-xl">
+                        Postularme
+                      </Button>
+                    </a>
                   </div>
                 </div>
               ))}
